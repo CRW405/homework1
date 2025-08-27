@@ -51,25 +51,105 @@ Double has 1 sign bit, 11 scale bits, and 52 number bits and equals (2-2^-52)*2^
 
 ## Question 5
 
-[anything.java](./anything.java)
+[anything.java](./anything.java)  
 `"Goodbye Space!"`
 
 ---
 
 ## Question 6
 
-[Fibonacci.java](./Fibonacci.java)
+[Fibonacci.java](./Fibonacci.java)  
 `call stack`
 
 ---
 
 ## Question 7
 
+[eratosthenes.java](./eratosthenes.java)
+
 1. `97 89 83 79 73 in 1.0965E-5 seconds`
-3. `1073741789 1073741783 1073741741 1073741723 1073741719 in 18.236022787 seconds`
-4. `No, i used an int for n and int is a 32 bit signed data type so it cannot store the decimal 2^32`
+2. `1073741789 1073741783 1073741741 1073741723 1073741719 in 18.236022787 seconds`
+3. `No, i used an int for n and int is a 32 bit signed data type so it cannot store the decimal 2^32`
 
 ---
 
 ## Question 8
 
+[byteReader.java](./byteReader.java)
+
+1.
+2.
+
+```
+3
+5
+7
+9
+11
+13
+15
+17
+19
+21
+23
+25
+27
+29
+31
+...
+406560409
+406560411
+406560413
+406560415
+406560417
+406560419
+406560421
+406560423
+406560425
+406560427
+406560429
+406560431
+406560433
+406560435
+406560437
+in 0.277146457 seconds
+```
+
+3.
+
+```
+233
+235
+237
+239
+2311
+2313
+2315
+2317
+2319
+2321
+2323
+2325
+2327
+2329
+2331
+...
+23406560409
+23406560411
+23406560413
+23406560415
+23406560417
+23406560419
+23406560421
+23406560423
+23406560425
+23406560427
+23406560429
+23406560431
+23406560433
+23406560435
+23406560437
+in 0.26645249 seconds
+```
+
+# ^^^^ I don't think this is right ^^^^
