@@ -45,7 +45,7 @@ public class eratosthenes {
          * are all the primes below n.
          */
 
-        for (int p = 2; p < notPrimes.length; p++) {
+        for (int p = 2; p < Math.sqrt(notPrimes.length); p++) {
             if (notPrimes[p] == true)
                 continue;
             for (int i = 2; i * p < notPrimes.length; i++) {
@@ -57,7 +57,8 @@ public class eratosthenes {
     }
 }
 
-/* v1
+/*
+ * v1 simple loop
  * 1073741789
  * 1073741783
  * 1073741741
@@ -66,7 +67,8 @@ public class eratosthenes {
  * 132.747966329
  */
 
-/* v2
+/*
+ * v2 skip trues
  * 1073741789
  * 1073741783
  * 1073741741
@@ -75,11 +77,21 @@ public class eratosthenes {
  * 18.236022787
  */
 
-/* v2
+/*
+ * v2 
  * 97
  * 89
  * 83
  * 79
  * 73
  * 1.0965E-5
+ */
+
+/*v3 only loop sqrt(n)
+ * 1073741789
+ * 1073741783
+ * 1073741741
+ * 1073741723
+ * 1073741719
+ * 16.603312252
  */

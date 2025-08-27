@@ -4,30 +4,34 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
-public class byteReader {
+public class Primes {
     public static void main(String[] args) {
         double startTime = System.nanoTime();
         byte[] bytes = getFileBytes("./half_gaps.bin");
 
-        int[] gaps = convertBytes(bytes);
+        long[] gaps = convertBytes(bytes);
 
-        int[] cumsum = cumsum(gaps);
+        long[] cumsum = cumsum(gaps);
 
-        int[] modifiedCumSum = modifyCumSum(cumsum);
+        long[] modifiedCumSum = modifyCumSum(cumsum);
         double endTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
 
-        int[] first15 = first15(modifiedCumSum);
-        int[] last15 = last15(modifiedCumSum);
+        long[] first15 = first15(modifiedCumSum);
+        long[] last15 = last15(modifiedCumSum);
 
-        for (int i : first15) {
-            System.out.println("23" + i);
+        System.out.println("2\n3");
+
+        for (long i : first15) {
+            System.out.println(i);
         }
 
-        for (int i : last15) {
-            System.out.println("23" + i);
+        System.out.println("...");
+
+        for (long i : last15) {
+            System.out.println(i);
         }
 
-        System.out.println(endTime);
+        System.out.println("in " + endTime+ " seconds");
     }
 
     public static byte[] getFileBytes(String path) {
@@ -41,22 +45,22 @@ public class byteReader {
         return bytes;
     }
 
-    public static int[] convertBytes(byte[] bytes) {
-        int[] gaps = new int[bytes.length];
+    public static long[] convertBytes(byte[] bytes) {
+        long[] gaps = new long[bytes.length];
         for (int i = 0; i < bytes.length; i++)
             gaps[i] = Byte.toUnsignedInt(bytes[i]);
         // System.out.println("bytes converted");
         return gaps;
     }
 
-    public static int[] cumsum(int[] gaps) {
+    public static long[] cumsum(long[] gaps) {
         // System.out.println("cumsum started");
-        int[] cumsum = new int[gaps.length];
+        long[] cumsum = new long[gaps.length];
 
+        int cumsumAti = 0;
         for (int i = 0; i < gaps.length; i++) {
-            int cumsumAti = 0;
 
-            cumsumAti += i;
+            cumsumAti += gaps[i];
 
             cumsum[i] = cumsumAti;
         }
@@ -64,8 +68,8 @@ public class byteReader {
         return cumsum;
     }
 
-    public static int[] modifyCumSum(int[] cumsum) {
-        int[] modifiedCumSum = new int[cumsum.length];
+    public static long[] modifyCumSum(long[] cumsum) {
+        long[] modifiedCumSum = new long[cumsum.length];
 
         for (int i = 0; i < cumsum.length; i++) {
             modifiedCumSum[i] = (cumsum[i] * 2) + 3;
@@ -74,8 +78,8 @@ public class byteReader {
         return modifiedCumSum;
     }
 
-    public static int[] last15(int[] array) {
-        int[] last15 = new int[15];
+    public static long[] last15(long[] array) {
+        long[] last15 = new long[15];
 
         for (int i = 0; i < last15.length; i++) {
             last15[i] = array[array.length - 16 + i];
@@ -84,8 +88,8 @@ public class byteReader {
         return last15;
     }
 
-    public static int[] first15(int[] array) {
-        int[] first15 = new int[15];
+    public static long[] first15(long[] array) {
+        long[] first15 = new long[15];
 
         for (int i = 0; i < first15.length; i++) {
             first15[i] = array[i];
