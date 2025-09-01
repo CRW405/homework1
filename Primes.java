@@ -5,6 +5,9 @@ import java.nio.file.Paths;
 import java.io.IOException;
 
 public class Primes {
+
+    static long[] primes = null;
+
     public static void main(String[] args) {
         double startTime = System.nanoTime();
         byte[] bytes = getFileBytes("./half_gaps.bin");
@@ -19,19 +22,26 @@ public class Primes {
         long[] first15 = first15(modifiedCumSum);
         long[] last15 = last15(modifiedCumSum);
 
-        System.out.println("2\n3");
+        // System.out.println("2\n3");
 
-        for (long i : first15) {
-            System.out.println(i);
-        }
+        // for (long i : first15) {
+        //     System.out.println(i);
+        // }
 
-        System.out.println("...");
+        // System.out.println("...");
 
-        for (long i : last15) {
-            System.out.println(i);
-        }
+        // for (long i : last15) {
+        //     System.out.println(i);
+        // }
 
-        System.out.println("in " + endTime+ " seconds");
+        // System.out.println("in " + endTime + " seconds");
+
+        primes = modifiedCumSum;
+    }
+
+    public static long[] returnPrimes() {
+        main(null);
+        return primes;
     }
 
     public static byte[] getFileBytes(String path) {
