@@ -1,16 +1,18 @@
-package homework1;
 
 public class Search {
     public static void main(String[] args) {
         double start = System.nanoTime();
         double favourable = 0;
         long[] primes = getPrimes();
-        // int sampleSize = 1000000;
-        int sampleSize = 100;
+        int sampleSize = 1000000;
+        // int sampleSize = 100;
         for (int i = 1; i <= sampleSize; i++) {
             long x = getRandomInt(2, Integer.MAX_VALUE);
-            // favourable += linearSearch(x, primes) ? 1.0 : 0.0;
-            favourable += binarySearch(x, primes) ? 1.0 : 0.0;
+
+            favourable += linearSearch(x, primes) ? 1.0 : 0.0;
+
+            // favourable += binarySearch(x, primes) ? 1.0 : 0.0;
+
             // System.out.println(favourable / i);
         }
         System.out.println(favourable / sampleSize);
@@ -30,6 +32,8 @@ public class Search {
         boolean found = false;
 
         for (long i : primes) {
+            if (i > x)
+                break;
             if (x == i) {
                 found = true;
                 break;

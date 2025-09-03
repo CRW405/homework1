@@ -1,4 +1,3 @@
-package homework1;
 
 
 import java.nio.file.Files;
@@ -20,8 +19,8 @@ public class Primes {
         long[] modifiedCumSum = modifyCumSum(cumsum);
         double endTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
 
-        long[] first15 = first15(modifiedCumSum);
-        long[] last15 = last15(modifiedCumSum);
+        // long[] first15 = first15(modifiedCumSum);
+        // long[] last15 = last5(modifiedCumSum);
 
         // System.out.println("2\n3");
 
@@ -89,11 +88,11 @@ public class Primes {
         return modifiedCumSum;
     }
 
-    public static long[] last15(long[] array) {
-        long[] last15 = new long[15];
+    public static long[] last5(long[] array) {
+        long[] last15 = new long[5];
 
         for (int i = 0; i < last15.length; i++) {
-            last15[i] = array[array.length - 16 + i];
+            last15[i] = array[array.length - 6 + i];
         }
 
         return last15;

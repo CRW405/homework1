@@ -19,7 +19,25 @@ public class Decipher {
         // System.out.print(cipher[plain.charAt(i)]);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        String message = "";
 
+        for (int i = 0; i < plain.length(); i++) {
+            char cursor = plain.charAt(i);
+
+            for (int j = 0; j < cipher.length; j++) {
+                if (cursor == cipher[j]) {
+                    message += (char) j;
+                }
+            }
+        }
+
+        System.out.println(message);
+
+        for (int i = 0; i < message.length(); i++) {
+            
+        }
+        
     }
 
     public static String read(String path) {
@@ -33,11 +51,6 @@ public class Decipher {
     }
 
     public static int mod(int x, int n) {
-        return ((x % n) + n) % n;
-    }
-
-    public static int unmod(int x, int n) {
-
-        return x;
+        return ((x % n) + n) % n; // always returns positive
     }
 }
