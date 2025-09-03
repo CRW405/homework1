@@ -1,3 +1,5 @@
+package homework1;
+
 public class max_value {
 
     public static void main(String[] args) {
