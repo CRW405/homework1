@@ -19,22 +19,22 @@ public class Primes {
         long[] modifiedCumSum = modifyCumSum(cumsum);
         double endTime = (System.nanoTime() - startTime) / Math.pow(10, 9);
 
-        // long[] first15 = first15(modifiedCumSum);
-        // long[] last15 = last5(modifiedCumSum);
+        long[] first15 = first15(modifiedCumSum);
+        long[] last15 = last5(modifiedCumSum);
 
-        // System.out.println("2\n3");
+        System.out.println("2\n3");
 
-        // for (long i : first15) {
-        //     System.out.println(i);
-        // }
+        for (long i : first15) {
+            System.out.println(i);
+        }
 
-        // System.out.println("...");
+        System.out.println("...");
 
-        // for (long i : last15) {
-        //     System.out.println(i);
-        // }
+        for (long i : last15) {
+            System.out.println(i);
+        }
 
-        // System.out.println("in " + endTime + " seconds");
+        System.out.println("in " + endTime + " seconds");
 
         primes = modifiedCumSum;
     }
