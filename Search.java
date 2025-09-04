@@ -47,6 +47,12 @@ public class Search {
      * LOG
      * 0.09
      * Time taken : 3.20 seconds
+     * 
+     * 0.048551
+     * Time taken : 20469.49 second
+     * 
+     * 0.048731
+     * Time taken : 20482.42 seconds
      */
 
     public static boolean binarySearch(long x, long[] primes) {
