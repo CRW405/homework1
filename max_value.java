@@ -1,4 +1,3 @@
-package homework1;
 
 public class max_value {
 
